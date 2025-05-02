@@ -12,7 +12,7 @@ export default ((userOpts?: Partial<typeof defaultOpts>) => {
   function PagePhoto(_props: QuartzComponentProps) {
     return (
       <div class="page-photo-container">
-        <a href="/">
+        <a href="">
           <img
             src={opts.imageUrl}
             alt={opts.alt}
@@ -21,7 +21,7 @@ export default ((userOpts?: Partial<typeof defaultOpts>) => {
           />
         </a>
         <div class="photo-links">
-          <a href="about/">about</a>
+          <a href="about">about</a>
           <a href="mailto:ianberman@ianjb.com">contact</a>
         </div>
       </div>
