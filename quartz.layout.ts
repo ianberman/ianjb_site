@@ -45,7 +45,7 @@ export const defaultContentPageLayout: PageLayout = {
         Component.PagePhotoColumn({
           images: [
             {  
-              url: "images/despelote.png",
+              url: "images/despelote.jpg",
               alt: "despelote key art",
               width: 260,
               paddingBottom: "0rem",
