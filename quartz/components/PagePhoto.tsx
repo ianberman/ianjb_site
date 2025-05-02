@@ -1,7 +1,7 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 const defaultOpts = {
-  imageUrl: "/static/card.png", // Change this to your image path
+  imageUrl: "/images/card.png", // Change this to your image path
   alt: "Profile photo",
   width: 260,
 //   borderRadius: "50%",
