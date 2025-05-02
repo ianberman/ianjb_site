@@ -16,27 +16,27 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
+    // Component.ArticleTitle(),
+    // Component.ContentMeta(),
     Component.TagList(),
   ],
   left: [
     Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-        { Component: Component.ReaderMode() },
-      ],
-    }),
-    Component.Explorer(),
+    // Component.MobileOnly(Component.Spacer()),
+    // Component.Flex({
+    //   components: [
+    //     {
+    //       Component: Component.Search(),
+    //       grow: true,
+    //     },
+    //     { Component: Component.Darkmode() },
+    //     { Component: Component.ReaderMode() },
+    //   ],
+    // }),
+    // Component.Explorer(),
   ],
   right: [
-    Component.Graph(),
+    // Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
@@ -54,7 +54,6 @@ export const defaultListPageLayout: PageLayout = {
           Component: Component.Search(),
           grow: true,
         },
-        { Component: Component.Darkmode() },
       ],
     }),
     Component.Explorer(),
