@@ -23,7 +23,9 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     // Component.PageTitle(),
-    Component.PagePhoto(),
+    Component.PagePhoto({
+      imageUrl: "/images/card.png"
+    }),
     // Component.MobileOnly(Component.Spacer()),
     // Component.Flex({
     //   components: [
