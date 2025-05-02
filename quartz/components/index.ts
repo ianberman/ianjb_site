@@ -24,6 +24,7 @@ import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import PagePhoto from "./PagePhoto"
+import PagePhotoColumn from "./PagePhotoColumn"
 
 export {
   ArticleTitle,
@@ -51,5 +52,6 @@ export {
   Comments,
   Flex,
   ConditionalRender,
-  PagePhoto
+  PagePhoto,
+  PagePhotoColumn
 }

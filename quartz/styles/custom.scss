@@ -6,6 +6,62 @@ article br, #quartz-body br, .page br, br {
     margin: 5em 0 !important;
 }
 
-body {
+// in your custom SCSS, below base.scss
+.page {
+    /* kill the centered-max-width */
+    width: 100vw !important;
+    max-width: none  !important;
+    margin: 0         !important;
+    box-sizing: border-box;  // so your border/padding stay inside
     border: 2.5mm ridge rgb(28, 6, 37);
+    padding-bottom: 3rem;
+  }
+  
+
+
+img {
+    border-radius: 4px;
 }
+
+// base – column on desktop
+.page-photo-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  // tablet/mobile breakpoint: always 3 across, each max 260px, but fluid below
+  @media (max-width: 1179px) {
+    .page-photo-column {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      justify-items: center;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+  
+    .page-photo-column img {
+      width: 100% !important;       // fill its grid cell
+      max-width: 260px !important;   // never exceed 260px
+      height: auto;
+      margin-bottom: 0 !important;
+    }
+
+    @media (max-width: 767px) {
+        .page-photo-container {
+          /* let it stretch to the full column width, but never exceed your art size */
+          width: 100%;
+          max-width: 260px;
+      
+          /* horizontally center the container itself */
+          margin: 0 auto;
+      
+          /* flex settings you already had */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+  }
+  
