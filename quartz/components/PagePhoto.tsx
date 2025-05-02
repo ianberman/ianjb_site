@@ -21,7 +21,7 @@ export default ((userOpts?: Partial<typeof defaultOpts>) => {
           />
         </a>
         <div class="photo-links">
-          <a href="about">about</a>
+          <a href="about/">about</a>
           <a href="mailto:ianberman@ianjb.com">contact</a>
         </div>
       </div>
