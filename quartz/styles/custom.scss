@@ -1,3 +1,11 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+article br, #quartz-body br, .page br, br {
+    display: block !important;
+    margin: 5em 0 !important;
+}
+
+body {
+    border: 2.5mm ridge rgb(28, 6, 37);
+}
