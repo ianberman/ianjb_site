@@ -6,6 +6,7 @@ i'm an artist primarily working with sound and interactive media. i like ideas t
 
 living in berlin, germany -- born in san francisco, california -- BA NYU 2019
 
+ian james berman at gmail dot com
 
 ![[images/sealions.jpeg|400]]
 
