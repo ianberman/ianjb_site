@@ -48,6 +48,41 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
               allSlugs: ctx.allSlugs,
             }
 
+            const isImageOnlyLink = (node: any): boolean => {
+              if (!node || !Array.isArray(node.children)) {
+                return false
+              }
+
+              const containsImage = (child: any): boolean => {
+                if (child?.type === "element") {
+                  if (child.tagName === "img" || child.tagName === "picture") {
+                    return true
+                  }
+                  if (Array.isArray(child.children)) {
+                    return child.children.some(containsImage)
+                  }
+                }
+                return false
+              }
+
+              const hasImage = node.children.some(containsImage)
+              if (!hasImage) {
+                return false
+              }
+
+              const hasNonImageContent = node.children.some((child: any) => {
+                if (child?.type === "text") {
+                  return child.value.trim().length > 0
+                }
+                if (child?.type === "element") {
+                  return !["img", "picture", "source"].includes(child.tagName)
+                }
+                return false
+              })
+
+              return !hasNonImageContent
+            }
+
             visit(tree, "element", (node, _index, _parent) => {
               // rewrite all links
               if (
@@ -60,7 +95,7 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
                 const isExternal = isAbsoluteUrl(dest, { httpOnly: false })
                 classes.push(isExternal ? "external" : "internal")
 
-                if (isExternal && opts.externalLinkIcon) {
+                if (isExternal && opts.externalLinkIcon && !isImageOnlyLink(node)) {
                   node.children.push({
                     type: "element",
                     tagName: "svg",
