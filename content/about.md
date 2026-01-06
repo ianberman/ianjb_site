@@ -2,13 +2,15 @@
 title: about
 enableToc: false
 ---
-i'm an artist primarily working with sound and interactive media. i like ideas that don't sit within a single genre or established form. i also spend a lot of time cooking and watching american sports late into the night.
+I'm an artist primarily working with sound and interactive media. I like ideas that don't sit within a single genre or established form. I also spend a lot of time cooking, cycling and watching american sports.
 
-living in berlin, germany -- born in san francisco, california -- BA NYU 2019
+2023 -> now : berlin
+2015 -> 2023 : new york city
+1997 -> 2015 : san francisco
 
-ian james berman at gmail dot com
+ianberman at ianjb dot com
 
 ![[images/sealions.jpeg|400]]
 
 
-ps. credit to [jie en lee ](https://www.jieenlee.com/) for the profile art :)
+profile art credit [jie en lee ](https://www.jieenlee.com/)

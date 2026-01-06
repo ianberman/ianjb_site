@@ -31,6 +31,30 @@ img {
     margin: 2.5rem 0;
 }
 
+.project-heading {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.project-subentry {
+    display: block;
+    // margin-left: 1rem;
+    margin-bottom: 0;
+}
+
+.project-subentry--flush {
+    margin-left: 0;
+    margin-bottom: 0.75rem;
+}
+
+.project-subentry--spacer {
+    margin-top: 0.75rem;
+}
+
+.project-subentry--gap {
+    margin-top: 0.75rem;
+}
+
 .project-body {
     min-width: 0;
 }
