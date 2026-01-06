@@ -39,6 +39,7 @@ enableToc: false
         2025 : <a href="https://www.kw-berlin.de/en/exhibitions/holly-herndon-and-mat-dryhurst-starmirror">
           Starmirror - KW Berlin
           </a>
+      </span>
       <span class="project-subentry project-subentry--gap">
         2024 : <a href="https://www.kw-berlin.de/en/exhibitions/holly-herndon-and-mat-dryhurst-starmirror">
           The Call - Serpentine Gallery, London
