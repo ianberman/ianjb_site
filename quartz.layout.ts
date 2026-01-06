@@ -39,37 +39,7 @@ export const defaultContentPageLayout: PageLayout = {
     // }),
     // Component.Explorer(),
   ],
-  right: [
-    Component.ConditionalRender({
-      component: Component.DesktopOnly(
-        Component.PagePhotoColumn({
-          images: [
-            {  
-              url: "images/despelote.jpg",
-              alt: "despelote key art",
-              width: 260,
-              paddingBottom: "0rem",
-              link: "https://despelote.game/"
-            },
-            { url: "images/IGF.png",
-              alt: "IGF 2025 - excellence in audio award",
-              width: 130,
-              paddingBottom: "8rem",
-              link: "https://igf.com/finalists-and-winners"
-             },
-            {
-              url: "images/TheCall.jpg",
-              alt: "Image from exhibition The Call",
-              width: 260,
-              paddingBottom: "0rem",
-              link: "https://www.serpentinegalleries.org/whats-on/holly-herndon-mat-dryhurst-the-call/"
-            },
-          ],
-        })
-      ),
-      condition: (page) => page.fileData.slug === "index",
-    }),
-  ],
+  right: [],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)

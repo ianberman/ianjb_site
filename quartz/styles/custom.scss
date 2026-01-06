@@ -23,45 +23,78 @@ img {
     border-radius: 4px;
 }
 
-// base – column on desktop
-.page-photo-column {
+.project-entry {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: start;
+    margin: 2.5rem 0;
+}
+
+.project-body {
+    min-width: 0;
+}
+
+.project-media {
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  
-  // tablet/mobile breakpoint: always 3 across, each max 260px, but fluid below
-  @media (max-width: 1179px) {
-    .page-photo-column {
-      display: grid !important;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      justify-items: center;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-    }
-  
-    .page-photo-column img {
-      width: 100% !important;       // fill its grid cell
-      max-width: 260px !important;   // never exceed 260px
-      height: auto;
-      margin-bottom: 0 !important;
+    align-items: flex-end;
+    gap: 1rem;
+    justify-self: end;
+}
+
+.project-media a {
+    display: block;
+}
+
+.project-media img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+}
+
+@media (min-width: 1179px) {
+    body[data-slug="index"] #quartz-body .center {
+        grid-column: 2 / 4;
     }
 
-    @media (max-width: 767px) {
-        .page-photo-container {
-          /* let it stretch to the full column width, but never exceed your art size */
-          width: 100%;
-          max-width: 260px;
-      
-          /* horizontally center the container itself */
-          margin: 0 auto;
-      
-          /* flex settings you already had */
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-  }
+    body[data-slug="index"] #quartz-body .sidebar.right {
+        display: none;
+    }
+
+    body[data-slug="index"] #quartz-body {
+        padding-right: 2rem;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 767px) {
+    .project-entry {
+        grid-template-columns: 1fr;
+    }
+
+    .project-media {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        justify-items: center;
+        justify-self: stretch;
+        width: 100%;
+    }
+
+    .project-media img {
+        max-width: 180px;
+        width: 100%;
+        height: auto;
+    }
+
+    .page-photo-container {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
   
