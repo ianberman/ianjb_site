@@ -3,7 +3,7 @@
 // put your custom CSS here!
 article br, #quartz-body br, .page br, br {
     display: block !important;
-    margin: 5em 0 !important;
+    // margin: 2em 0 !important;
 }
 
 // in your custom SCSS, below base.scss
@@ -23,12 +23,61 @@ img {
     border-radius: 4px;
 }
 
+hr {
+    margin: 0.9rem auto;
+}
+
+body[data-slug="index"] hr {
+    margin: 0.5rem 0;
+}
+
 .project-entry {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 2rem;
     align-items: start;
-    margin: 2.5rem 0;
+    margin: 1.75rem 0;
+}
+
+body[data-slug="index"] .project-entry {
+    margin: 1.1rem 0;
+}
+
+body[data-slug="index"] .page,
+body[data-slug="about"] .page {
+    min-height: 100vh;
+    padding-bottom: 0.8rem;
+}
+
+body[data-slug="index"] #quartz-body .sidebar,
+body[data-slug="about"] #quartz-body .sidebar {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+body[data-slug="about"] #quartz-body .sidebar {
+    height: auto;
+    position: static;
+}
+
+body[data-slug="index"] #quartz-body .page-header,
+body[data-slug="about"] #quartz-body .page-header {
+    margin-top: 0;
+}
+
+body[data-slug="index"] .page-footer,
+body[data-slug="about"] .page-footer {
+    margin-top: 0.6rem;
+}
+
+body[data-slug="index"] footer,
+body[data-slug="about"] footer {
+    margin: 0;
+    padding: 0;
+}
+
+body[data-slug="about"] footer {
+    display: none;
 }
 
 .project-heading {
@@ -77,6 +126,40 @@ img {
     height: auto;
 }
 
+.mobile-collapsible__toggle {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+.mobile-collapsible__summary {
+    cursor: pointer;
+    font-family: var(--headerFont);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    margin: 0.75rem 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.mobile-collapsible__summary::after {
+    content: "\25B6";
+    font-size: 0.75em;
+    line-height: 1;
+    transform: translateY(1px);
+}
+
+.mobile-collapsible__toggle:checked + .mobile-collapsible__summary::after {
+    content: "\25BC";
+}
+
+.mobile-collapsible__content {
+    margin-top: 0.25rem;
+}
+
 @media (min-width: 1179px) {
     body[data-slug="index"] #quartz-body .center {
         grid-column: 2 / 4;
@@ -92,9 +175,84 @@ img {
     }
 }
 
+@media (min-width: 768px) {
+    .mobile-collapsible__toggle,
+    .mobile-collapsible__summary {
+        display: none;
+    }
+
+    .mobile-collapsible__content {
+        display: block;
+        margin-top: 0;
+    }
+
+    body[data-slug="index"] #quartz-body .sidebar,
+    body[data-slug="about"] #quartz-body .sidebar {
+        padding-top: 2.5rem;
+    }
+
+    body[data-slug="index"] #quartz-body .page-header,
+    body[data-slug="about"] #quartz-body .page-header {
+        margin-top: 0.4rem;
+    }
+}
+
 @media (max-width: 767px) {
+    hr {
+        margin: 0.6rem auto;
+    }
+
+    body[data-slug="index"] hr {
+        margin: 0.4rem 0;
+    }
+
+    .mobile-collapsible__summary {
+        margin: 0.2rem 0;
+    }
+
+    .mobile-collapsible__content {
+        margin-top: 0.2rem;
+    }
+
+    .mobile-collapsible__content blockquote {
+        margin: 0.3rem 0;
+    }
+
+    .mobile-collapsible__content p {
+        margin: 0.25rem 0;
+    }
+
+    .project-entry {
+        gap: 0.5rem;
+        margin: 1.1rem 0;
+    }
+
+    body[data-slug="index"] .project-entry {
+        margin: 0.85rem 0;
+    }
+
+    .mobile-collapsible__content {
+        display: none;
+    }
+
+    .mobile-collapsible__toggle:checked
+        + .mobile-collapsible__summary
+        + .mobile-collapsible__content {
+        display: block;
+    }
+
     .project-entry {
         grid-template-columns: 1fr;
+    }
+
+    body[data-slug="index"] #quartz-body .sidebar.left,
+    body[data-slug="about"] #quartz-body .sidebar.left {
+        padding-top: 1rem;
+    }
+
+    body[data-slug="index"] .page,
+    body[data-slug="about"] .page {
+        padding-bottom: 0.6rem;
     }
 
     .project-media {
