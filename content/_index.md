@@ -80,6 +80,7 @@ enableToc: false
   <div class="project-body">
     <p><a href="https://sybil.gg/">Sybil</a><br />
     2026 ARC2 artist in residence<br />
+    developing <a href="buelow">Sanierungsgebiet Bülowstraße</a></p>
   </div>
   <div class="project-media">
     <a href="https://sybil.gg/">
