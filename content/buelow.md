@@ -7,5 +7,3 @@ enableToc: false
 In development
 
 more soon --
-
----
